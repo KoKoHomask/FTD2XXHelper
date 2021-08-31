@@ -35,7 +35,10 @@ namespace FTD2XXHelper
             var functionHandle = UnixGetProcAddress(libraryHandle, functionName);
             var errorPointer = UnixGetLastError();
             if (errorPointer != IntPtr.Zero)
-                throw new Exception("dlsym: " + Marshal.PtrToStringAnsi(errorPointer));
+            {
+                Console.WriteLine("dlsym: " + Marshal.PtrToStringAnsi(errorPointer));
+                functionHandle = IntPtr.Zero;
+            }
             if (functionHandle == IntPtr.Zero)
                 Console.WriteLine("GetProcAddress ERR \"{0}\"", functionName);
             return functionHandle;
