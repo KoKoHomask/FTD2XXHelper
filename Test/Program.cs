@@ -1,5 +1,6 @@
 ﻿using System;
 using FTD2XXHelper;
+using static FTD2XXHelper.FTDI;
 
 namespace Test
 {
@@ -16,6 +17,7 @@ namespace Test
             var baudStatus = fTDI.SetBaudRate(3000000);
             var dtr = fTDI.SetDTR(true);
             var rts = fTDI.SetRTS(true);
+            bool isOpen = fTDI.IsOpen;
             var closeSattus = fTDI.Close();
             Console.WriteLine("Hello World!");
             Console.WriteLine(res);
