@@ -6,5 +6,5 @@
 
 根据不同的平台,Windows下使用kernel32.dll,LoadLibrary. Linux下使用libdl.so,UnixLoadLibrary. 动态加载FTD2XX.DLL或libftd2xx.so<br />
 
-Install-Package FTD2XXHelper -Version 1.2.0
+Install-Package FTD2XXHelper -Version 1.2.1
 
